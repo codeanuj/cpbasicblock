@@ -1,0 +1,30 @@
+public class KthSmallest {
+    
+     public static int kthsmallest(final int[] A, int B) {
+        //intution is find min, place it in last , find second min, place it on second last position in array in this A[n-K] give us the kth smallest
+        int m=A.length-1;
+        int k= A.length;
+        int i=0;
+        
+        while(i<B){
+            int min = A[0];
+            int j=1;int index =0;
+            while(j<k){
+                if(min>A[j]){
+                    index =j;
+                    min=A[j];
+                }
+                j++;
+            }
+            
+            int temp = min;
+            A[index] =A[m];
+            A[m] = temp;
+            k--;
+            i++;
+            m--;
+        }
+        
+        return A[A.length-B];
+    }
+}
