@@ -18,36 +18,34 @@ Return an array of length 2 where First element denotes the starting index(0-bas
 public class Solution {
     public int[] subUnsort(int[] A) {
         
-        int i= 0;
-        int j=A.length-1;
-        //with two pointer find the i and j which are unsorted and return it
-       
-        boolean flag1 = true;
-        boolean flag2 = true;
-        while(i<j){
-            if(A[i+1]>A[i] && flag1){
-                i++;
-            }else{
-                flag1=false;
-            }
-            if(A[j]>A[j-1] && flag2){
-                j--;
-            }else{
-                flag2 = false;
-            }
-            if(!(flag1||flag2)){
-                break;
-            }
-        }
-         if(i==j){
-            return new int[]{-1};
-        }
-        
-        int[] result = new int[2];
-        result[0] = i;
-        result[1] = j;
-        
-        return result;
-        
+      int[] B=new int[A.length];
+	       for(int i=0; i<A.length;i++) {
+	    	   B[i]=A[i];
+	       }
+	       Arrays.sort(A);
+	       int index1=-1;
+	       int index2=-1;
+	       for(int i =0;i<A.length; i++){
+	           if(A[i]!=B[i]){
+	               index1=i;
+	               break;
+	           }
+	       }
+	       for(int i =A.length-1;i>index1; i--){
+	           if(A[i]!=B[i]){
+	               index2=i;
+	               break;
+	           }
+	       }
+	       
+	       if(index1 ==-1){
+	           return new int[]{-1};
+	       }
+	       
+	       int[] result = new int[2];
+	       result[0]=index1;
+	       result[1]=index2;
+	       
+	       return result;   
     }
 }
