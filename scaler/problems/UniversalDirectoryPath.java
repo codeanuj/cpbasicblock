@@ -1,33 +1,32 @@
 
 
-Given a string A representing an absolute path for a file (Unix-style).
+//Given a string A representing an absolute path for a file (Unix-style).
 
-Return the string A after simplifying the absolute path.
+//Return the string A after simplifying the absolute path.
 
-Note:
+//Note:
 
-Absolute path always begin with '/' ( root directory ).
+//Absolute path always begin with '/' ( root directory ).
 
-Path will not have whitespace characters.
+//Path will not have whitespace characters.
 
 
-Input Format
+//Input Format
 
-The only argument given is string A.
-Output Format
+//The only argument given is string A.
+//Output Format
 
-Return a string denoting the simplified absolue path for a file (Unix-style).
-For Example
+//Return a string denoting the simplified absolue path for a file (Unix-style).
+//For Example
+//Input 1:
+  //  A = "/home/"
+//Output 1:
+  //  "/home"
 
-Input 1:
-    A = "/home/"
-Output 1:
-    "/home"
-
-Input 2:
-    A = "/a/./b/../../c/"
-Output 2:
-    "/c"
+//Input 2:
+  //  A = "/a/./b/../../c/"
+//Output 2:
+  //  "/c"
 
 
 public class UniversalDirectoryPath {
