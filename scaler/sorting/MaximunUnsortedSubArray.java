@@ -14,7 +14,7 @@ First and only argument is an array of non-negative integers of size N.
 
 Output Format
 Return an array of length 2 where First element denotes the starting index(0-based) and second element denotes the ending index(0-based) of the sub-array. If the array is already sorted, return an array containing only one element i.e. -1.*/
-
+//There exist a better solution in O(n) time
 public class Solution {
     public int[] subUnsort(int[] A) {
         
